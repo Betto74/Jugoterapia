@@ -1,0 +1,24 @@
+:root {
+    /* Colores */
+    --green: #38b000;
+    --green-dark: #2f8e00;
+    --dark: #333;
+    --light: #fff;
+    --gray-100: #f2f7f5;
+    --gray-200: #eee;
+    --text-dark: #333;
+    --text-light: #666;
+
+    /* Tipografía */
+    --font-sans: 'Poppins', sans-serif;
+
+    /* Espaciados */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

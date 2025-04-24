@@ -1,0 +1,46 @@
+.hero {
+    position: relative;
+    height: 100vh;
+    background: url('ruta/hero.jpg') center/cover fixed;
+    display: flex;
+    align-items: center;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 600px;
+    margin-left: var(--spacing-lg);
+    color: var(--light);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.btn {
+    display: inline-block;
+    padding: .8em 1.5em;
+    background: var(--green);
+    color: var(--light);
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background .3s;
+}
+
+.btn:hover {
+    background: var(--green-dark);
+}

@@ -1,0 +1,14 @@
+/* Importar todo en orden */
+@import "variables.css";
+@import "base/reset.css";
+@import "base/typography.css";
+@import "layout/layout.css";
+
+@import "components/navbar.css";
+@import "components/hero.css";
+@import "components/about.css";
+@import "components/services.css";
+@import "components/contact.css";
+@import "components/footer.css";
+
+@import "utilities/utilities.css";

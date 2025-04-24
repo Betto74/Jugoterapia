@@ -1,0 +1,100 @@
+.contact {
+    background: var(--light);
+    padding: 4rem 0;
+    color: var(--text-dark);
+}
+
+.contact-container {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.contact-form-wrapper {
+    flex: 1;
+}
+
+.contact-text .label {
+    text-transform: uppercase;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-text h2 {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--gray-200);
+    border-radius: 4px;
+    font: inherit;
+}
+
+.checkbox-label {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.85rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: var(--spacing-md);
+    background: var(--green);
+    color: var(--light);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: background .3s;
+}
+
+.submit-btn:hover {
+    background: var(--green-dark);
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.map iframe {
+    width: 100%;
+    height: 300px;
+    border-radius: 6px;
+    margin-bottom: var(--spacing-lg);
+}
+
+.details h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.details p,
+.details li {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-sm);
+}
+
+.details a {
+    text-decoration: underline;
+    transition: color .3s;
+}
+
+.details a:hover {
+    color: var(--green);
+}
+
+.hours-list {
+    list-style: none;
+    line-height: 1.5;
+}
