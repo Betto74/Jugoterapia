@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jugoterapia – Catálogo</title>
+  <!-- Únicamente CSS global -->
+  <link rel="stylesheet" href="CSS/index.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">JUGOTERAPIA</div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link">Inicio</a></li>
+      <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
+      <li><a href="index.html#services" class="nav-link">Servicios</a></li>
+      <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+      <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+    </ul>
+
+    <div class="user-menu">
+      <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+      <ul class="user-dropdown">
+        <!-- No autenticado -->
+        <li><a href="auth/login.html">Login</a></li>
+        <li><a href="auth/signup.html">Sign Up</a></li>
+        <!-- Autenticado -->
+        <li class="hidden"><a href="orders.html">Mis pedidos</a></li>
+        <li class="hidden"><a href="/logout">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- BARRA DE BÚSQUEDA -->
+  <header class="catalog-header">
+    <input type="search" class="search-input" placeholder="Buscar jugo, licuado o postre…" />
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL: FILTROS + PRODUCTOS -->
+  <main class="catalog-content">
+    <!-- FILTROS LATERALES -->
+    <aside class="catalog-filters">
+      <div class="filter-group">
+        <h3>Tipo</h3>
+        <label><input type="checkbox" name="type" value="jugo" /> Jugo</label>
+        <label><input type="checkbox" name="type" value="licuado" /> Licuado</label>
+        <label><input type="checkbox" name="type" value="postre" /> Postre</label>
+      </div>
+      <div class="filter-group">
+        <h3>Precio</h3>
+        <label><input type="radio" name="price" value="0-50" /> $0-50</label>
+        <label><input type="radio" name="price" value="51-100" /> $51-100</label>
+        <label><input type="radio" name="price" value="101-200" /> $101-200</label>
+      </div>
+    </aside>
+
+    <!-- GRID DE PRODUCTOS: 3 COLUMNAS -->
+    <section class="catalog-items">
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <div class="item-card">
+        <img src="IMG/background.png" alt="Jugo de frutas" />
+        <div class="item-details">
+          <h4>Jugo de frutas</h4>
+          <p>$45 MXN</p>
+          <p>Delicioso jugo fresco de temporada.</p>
+          <a href="#" class="btn">Agregar</a>
+        </div>
+      </div>
+      <!-- Repite .item-card según productos -->
+    </section>
+
+
+  </main>
+
+  <script src="JS/index.js"></script>
+</body>
+
+</html>

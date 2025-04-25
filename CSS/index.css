@@ -1,9 +1,16 @@
-/* Importar todo en orden */
+/* index.css */
+
+/* 1. Variables globales */
 @import "variables.css";
+
+/* 2. Base: reset y tipografía */
 @import "base/reset.css";
 @import "base/typography.css";
+
+/* 3. Layout general */
 @import "layout/layout.css";
 
+/* 4. Componentes principales */
 @import "components/navbar.css";
 @import "components/hero.css";
 @import "components/about.css";
@@ -11,4 +18,11 @@
 @import "components/contact.css";
 @import "components/footer.css";
 
+/* 5. Estilos de autenticación (login/signup) */
+@import "components/auth.css";
+
+/* 6. Estilos del catalogo */
+@import "components/catalog.css";
+
+/* 7. Utilidades (helpers) */
 @import "utilities/utilities.css";

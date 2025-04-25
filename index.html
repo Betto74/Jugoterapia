@@ -1,33 +1,48 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Jugoterapia – Inicio</title>
   <link rel="stylesheet" href="CSS/index.css" />
 </head>
+
 <body>
 
   <!-- NAVBAR -->
   <nav class="navbar">
     <div class="logo">JUGOTERAPIA</div>
-  
+
     <ul class="nav-links">
-      <li><a href="#hero" class="nav-link active">Inicio</a></li>
-      <li><a href="#about" class="nav-link">Acerca De</a></li>
-      <li><a href="#services" class="nav-link">Servicios</a></li>
-     
+      <li><a href="index.html#hero" class="nav-link">Inicio</a></li>
+      <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
+      <li><a href="index.html#services" class="nav-link">Servicios</a></li>
+      <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+      <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
     </ul>
-  
-    <a href="#contact" class="contact-btn">CONTACTO</a>
+
+    <div class="user-menu">
+      <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+      <ul class="user-dropdown">
+        <!-- No autenticado -->
+        <li><a href="auth/login.html">Login</a></li>
+        <li><a href="auth/signup.html">Sign Up</a></li>
+        <!-- Autenticado -->
+        <li class="hidden"><a href="orders.html">Mis pedidos</a></li>
+        <li class="hidden"><a href="/logout">Cerrar sesión</a></li>
+      </ul>
+    </div>
   </nav>
 
+
   <!-- HERO -->
-  <section id="hero" class="hero" style="background-image: url('https://cdn.b12.io/client_media/cKtTSgsV/500bbad8-213a-11f0-9784-0242ac110002-jpg-hero_image.jpeg');">
+  <section id="hero" class="hero"
+    style="background-image: url('https://cdn.b12.io/client_media/cKtTSgsV/500bbad8-213a-11f0-9784-0242ac110002-jpg-hero_image.jpeg');">
     <div class="hero-content">
       <h1>Bienestar en cada sorbo</h1>
       <p>Jugos y licuados naturales para tu salud</p>
-      <a href="#" class="btn">Ver Catalogo</a>
+      <a href="catalog.html" class="btn">Ver Catalogo</a>
     </div>
   </section>
 
@@ -37,14 +52,15 @@
       <div class="about-text">
         <span class="label">Bienestar Natural</span>
         <h2>Refresca tu vida con jugos saludables</h2>
-        <p>Somos especialistas en crear y ofrecer jugos y licuados naturales, una deliciosa "terapia" para tu cuerpo. Combinamos frutas, verduras e ingredientes saludables para promover tu bienestar a través de bebidas nutritivas y refrescantes. Nuestra pasión es brindarte una opción sabrosa y llena de vitalidad para nutrir tu día. ¡Descubre tu bienestar natural con nosotros!</p>
-    
+        <p>Somos especialistas en crear y ofrecer jugos y licuados naturales, una deliciosa "terapia" para tu cuerpo.
+          Combinamos frutas, verduras e ingredientes saludables para promover tu bienestar a través de bebidas
+          nutritivas y refrescantes. Nuestra pasión es brindarte una opción sabrosa y llena de vitalidad para nutrir tu
+          día. ¡Descubre tu bienestar natural con nosotros!</p>
+
       </div>
       <div class="about-image">
-        <img
-          src="https://cdn.b12.io/client_media/cKtTSgsV/500bbad8-213a-11f0-9784-0242ac110002-jpg-hero_image.jpeg"
-          alt="Vasos de jugos saludables"
-        />
+        <img src="https://cdn.b12.io/client_media/cKtTSgsV/500bbad8-213a-11f0-9784-0242ac110002-jpg-hero_image.jpeg"
+          alt="Vasos de jugos saludables" />
       </div>
     </div>
   </section>
@@ -61,7 +77,9 @@
       <!-- Grid de tarjetas -->
       <div class="services-grid">
         <div class="card">
-          <img src="https://cdn.b12.io/client_media/cKtTSgsV/55a9ea0a-213a-11f0-9784-0242ac110002-jpg-regular_image.jpeg" alt="Jugos naturales" />
+          <img
+            src="https://cdn.b12.io/client_media/cKtTSgsV/55a9ea0a-213a-11f0-9784-0242ac110002-jpg-regular_image.jpeg"
+            alt="Jugos naturales" />
           <div class="card-content">
             <h3>
               Jugos naturales
@@ -72,7 +90,9 @@
         </div>
 
         <div class="card">
-          <img src="https://cdn.b12.io/client_media/cKtTSgsV/54edb538-213a-11f0-9784-0242ac110002-jpg-regular_image.jpeg" alt="Licuados saludables" />
+          <img
+            src="https://cdn.b12.io/client_media/cKtTSgsV/54edb538-213a-11f0-9784-0242ac110002-jpg-regular_image.jpeg"
+            alt="Licuados saludables" />
           <div class="card-content">
             <h3>
               Licuados saludables
@@ -83,7 +103,9 @@
         </div>
 
         <div class="card">
-          <img src="https://cdn.b12.io/client_media/cKtTSgsV/5567b964-213a-11f0-9784-0242ac110002-jpg-regular_image.jpeg" alt="Postres naturales" />
+          <img
+            src="https://cdn.b12.io/client_media/cKtTSgsV/5567b964-213a-11f0-9784-0242ac110002-jpg-regular_image.jpeg"
+            alt="Postres naturales" />
           <div class="card-content">
             <h3>
               Postres naturales
@@ -97,7 +119,7 @@
   </section>
 
   <!-- SECCIÓN CONTACTO -->
-  <section  id="contact" class="contact">
+  <section id="contact" class="contact">
     <div class="container contact-container">
 
       <!-- Lado Izquierdo: Formulario -->
@@ -106,65 +128,35 @@
           <span class="label">Conéctate con nosotros</span>
           <h2>Estamos aquí para ayudarte</h2>
         </div>
-        <form class="contact-form">
-          <label>
-            Name *
-            <input type="text" name="name" placeholder="Jane Smith" required />
-          </label>
-          <label>
-            Email address *
-            <input type="email" name="email" placeholder="email@website.com" required />
-          </label>
-          <label>
-            Phone number *
-            <input type="tel" name="phone" placeholder="555-555-5555" required />
-          </label>
-          <label>
-            Message
-            <textarea name="message" rows="5" placeholder="Your message…"></textarea>
-          </label>
-          <label class="checkbox-label">
-            <input type="checkbox" required />
-            I allow this website to store my submission so they can respond to my inquiry. *
-          </label>
-          <button type="submit" class="btn submit-btn">Submit</button>
-        </form>
-      </div>
-
-      <!-- Lado Derecho: Mapa y Datos -->
-      <div class="contact-info">
-        <div class="map">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3734.1234567890123!2d-101.1986269!3d20.1257875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428a3f6abcd1234%3A0x1234abcd5678ef!2sMorole%C3%B3n%2C%20Gto!5e0!3m2!1ses-419!2smx!4v0000000000000"
-            width="100%"
-            height="300"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy"
-          ></iframe>
-        </div>
         <div class="details">
-          <h3>Conéctate con nosotros</h3>
+          <h3>Correo:</h3>
           <p>
             <a href="mailto:jugoterapia@gmail.com">jugoterapia@gmail.com</a>
           </p>
 
-          <h3>Location</h3>
+          <h3>Ubicacion:</h3>
           <p>
             <span class="icon">📍</span>
             <a href="https://goo.gl/maps/tuLink">Moroleón, GUA MX</a>
           </p>
 
-          <h3>Hours</h3>
+          <h3>Horario</h3>
           <ul class="hours-list">
-            <li>Monday   9:00am – 10:00pm</li>
-            <li>Tuesday  9:00am – 10:00pm</li>
+            <li>Monday 9:00am – 10:00pm</li>
+            <li>Tuesday 9:00am – 10:00pm</li>
             <li>Wednesday 9:00am – 10:00pm</li>
             <li>Thursday 9:00am – 10:00pm</li>
-            <li>Friday   9:00am – 10:00pm</li>
+            <li>Friday 9:00am – 10:00pm</li>
             <li>Saturday 9:00am – 6:00pm</li>
-            <li>Sunday   9:00am – 12:00pm</li>
+            <li>Sunday 9:00am – 12:00pm</li>
           </ul>
+        </div>
+      </div>
+
+      <!-- Lado Derecho: Mapa y Datos -->
+      <div class="contact-info">
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d936.5585636735614!2d-101.19016763136676!3d20.124272408206618!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842cfae682d66301%3A0xc65283df5343c171!2zTWFyw61hIENvbmNlcGNpw7NuIFPDoW5jaGV6LCBMb3MgQWxhbW9zLCAzODgyNyBNb3JvbGXDs24sIEd0by4!5e0!3m2!1ses-419!2smx!4v1745602195882!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>
@@ -219,28 +211,6 @@
 
 </body>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-link');
-    
-      function onScroll() {
-        const scrollY = window.pageYOffset;
-        sections.forEach(sec => {
-          const top = sec.offsetTop - 100;
-          const height = sec.offsetHeight;
-          const id = sec.getAttribute('id');
-          if (scrollY >= top && scrollY < top + height) {
-            navLinks.forEach(link => {
-              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-            });
-          }
-        });
-      }
-    
-      window.addEventListener('scroll', onScroll);
-      onScroll();
-    });
-</script>
-    
+<script src="JS/index.js"></script>
+
 </html>
