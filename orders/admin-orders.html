@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pedidos - Panel Admin</title>
+    <link rel="stylesheet" href="../CSS/index.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">JUGOTERAPIA (Admin)</div>
+
+        <!-- Menú inline (solo en desktop) -->
+        <ul class="nav-links">
+            <li><a href="../index.html#hero" class="nav-link">Inicio</a></li>
+            <li><a href="../index.html#about" class="nav-link">Acerca De</a></li>
+            <li><a href="../index.html#services" class="nav-link">Servicios</a></li>
+            <li><a href="../index.html#contact" class="nav-link">Contacto</a></li>
+            <li><a href="../catalog.html" class="nav-link">Catálogo</a></li>
+        </ul>
+
+        <!-- Botón hamburguesa (siempre visible) -->
+        <div class="user-menu">
+            <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+            <ul class="user-dropdown">
+                <!-- Nav items (solo en mobile) -->
+                <li class="nav-item"><a href="../index.html#hero">Inicio</a></li>
+                <li class="nav-item"><a href="../index.html#about">Acerca De</a></li>
+                <li class="nav-item"><a href="../index.html#services">Servicios</a></li>
+                <li class="nav-item"><a href="../index.html#contact">Contacto</a></li>
+                <li class="nav-item"><a href="../catalog.html">Catálogo</a></li>
+
+                <!-- Separador -->
+                <li class="dropdown-separator"></li>
+
+                <!-- User items -->
+                <li class="user-item"><a href="../auth/login.html">Login</a></li>
+                <li class="user-item"><a href="../auth/signup.html">Sign Up</a></li>
+                <li class="user-item"><a href="../orders/orders.html">Mis pedidos</a></li>
+                <li class="user-item hidden"><a href="/logout">Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <h1>Todos los Pedidos</h1>
+        <!-- Opción de filtro/fecha o exportar -->
+    </header>
+
+    <main class="orders-container">
+        <table class="orders-table">
+            <thead>
+                <tr>
+                    <th>ID Pedido</th>
+                    <th>Cliente</th>
+                    <th>Fecha</th>
+                    <th>Productos</th>
+                    <th>Total</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12345</td>
+                    <td>Juan Pérez</td>
+                    <td>2025-04-24</td>
+                    <td>Jugo de frutas, Licuado verde</td>
+                    <td>$90 MXN</td>
+                    <td>Entregado</td>
+                    <td><a href="#" class="btn-small">Ver</a></td>
+                </tr>
+                <!-- Más filas dinámicas -->
+            </tbody>
+        </table>
+    </main>
+
+    <script src="../JS/index.js"></script>
+</body>
+
+</html>

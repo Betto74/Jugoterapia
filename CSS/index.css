@@ -18,11 +18,16 @@
 @import "components/contact.css";
 @import "components/footer.css";
 
-/* 5. Estilos de autenticación (login/signup) */
-@import "components/auth.css";
 
-/* 6. Estilos del catalogo */
+
+/* 5. Estilos del catalogo */
 @import "components/catalog.css";
 
-/* 7. Utilidades (helpers) */
+/* 6. Estilos de las ordenes */
+@import "components/orders.css";
+
+/* 7. Estilos de autenticación (login/signup) */
+@import "components/auth.css";
+
+/* 8. Utilidades (helpers) */
 @import "utilities/utilities.css";
