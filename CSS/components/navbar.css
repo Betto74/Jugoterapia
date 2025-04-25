@@ -1,26 +1,25 @@
 .navbar {
   position: sticky;
-  /* o fixed si lo quieres siempre encima de todo */
   top: 0;
   left: 0;
   width: 100%;
   background: var(--light);
-  /* asegúrate de tener un fondo para que no se vea el contenido de fondo */
-  padding: var(--spacing-lg) var(--spacing-lg);
+  padding: var(--spacing-lg);
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
-  /* para que esté siempre por encima */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* opcional, separa visualmente del contenido */
 }
 
+/* 2. Logo */
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(--dark);
 }
 
+/* 3. Enlaces inline (desktop) */
 .nav-links {
   list-style: none;
   display: flex;
@@ -28,41 +27,23 @@
 }
 
 .nav-links a {
-  font-weight: 500;
-  padding-bottom: var(--spacing-xs);
-  transition: color .3s;
-  /* Mantén la transición de color */
-  color: var(--dark);
   position: relative;
-  /* Necesario para posicionar el pseudo-elemento */
+  font-weight: 500;
+  color: var(--dark);
+  padding-bottom: var(--spacing-xs);
   text-decoration: none;
-  /* Evita el subrayado por defecto */
+  transition: color .3s;
 }
 
 .nav-links a::after {
   content: '';
-  display: block;
-  width: 0;
-  /* Inicialmente la línea tiene ancho 0 */
-  height: 2px;
-  background: var(--green);
-  margin-top: var(--spacing-xs);
   position: absolute;
   bottom: 0;
   left: 0;
-  transition: width .5s ease-in-out;
-  /* Transición de 1 segundo */
-}
-
-.nav-links a:hover::after,
-.nav-links a.active::after {
-  width: 100%;
-  /* La línea crece al 100% en hover o si está activo */
-}
-
-.nav-links a.active::after {
-  width: 100%;
-  /* La línea siempre visible para el enlace activo */
+  width: 0;
+  height: 2px;
+  background: var(--green);
+  transition: width .3s ease-in-out;
 }
 
 .nav-links a:hover,
@@ -70,30 +51,23 @@
   color: var(--green);
 }
 
-.contact-btn {
-  padding: .6em 1.2em;
-  border: 2px solid var(--dark);
-  border-radius: 4px;
-  font-weight: 600;
-  transition: background .3s, color .3s;
-  color: var(--dark);
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
 }
 
-.contact-btn:hover {
-  background: var(--dark);
-  color: var(--light);
-}
-
-.user-menu {
-  position: relative;
-}
-
+/* 4. Botón hamburguesa (siempre visible) */
 .hamburger-btn {
   background: none;
   border: none;
   font-size: 1.5rem;
   color: var(--dark);
   cursor: pointer;
+}
+
+/* 5. Dropdown general */
+.user-menu {
+  position: relative;
 }
 
 .user-dropdown {
@@ -104,18 +78,31 @@
   box-shadow: var(--shadow-sm);
   border-radius: 4px;
   list-style: none;
-  padding: var(--spacing-sm) 0;
   margin: 0;
+  padding: var(--spacing-sm) 0;
   display: none;
-  min-width: 140px;
+  min-width: 200px;
+  z-index: 1001;
 }
 
 .user-dropdown.active {
   display: block;
 }
 
-.user-dropdown li+li {
-  margin-top: var(--spacing-xs);
+/* Separador entre sección de páginas y usuario */
+.dropdown-separator {
+  border-top: 1px solid var(--gray-400);
+  margin: var(--spacing-sm);
+}
+
+/* Ítems de navegación dentro del dropdown */
+.user-dropdown li.nav-item {
+  display: block;
+}
+
+/* Ítems de usuario (login, signup, pedidos, logout) */
+.user-dropdown li.user-item {
+  display: block;
 }
 
 .user-dropdown a {
@@ -128,4 +115,37 @@
 
 .user-dropdown a:hover {
   background: var(--gray-200);
+}
+
+/* 6. Oculta temporales controlados vía JS */
+.hidden {
+  display: none !important;
+}
+
+/* 7. Responsive: <769px => oculta nav-links, muestra dropdown nav-items */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .dropdown-separator{
+    display: block;
+  }
+
+  .user-dropdown li.nav-item {
+    display: block;
+  }
+}
+
+/* Responsive: ≥769px => muestra nav-links, oculta dropdown nav-items */
+@media (min-width: 769px) {
+  .nav-links {
+    display: flex;
+  }
+  .dropdown-separator{
+    display: none;
+  }
+
+  .user-dropdown li.nav-item {
+    display: none;
+  }
 }
