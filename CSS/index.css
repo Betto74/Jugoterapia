@@ -29,5 +29,9 @@
 /* 7. Estilos de autenticación (login/signup) */
 @import "components/auth.css";
 
+@import "components/product.css";
+@import "components/cart.css";
+
+
 /* 8. Utilidades (helpers) */
 @import "utilities/utilities.css";

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrito – Jugoterapia</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">JUGOTERAPIA</div>
+        <ul class="nav-links">
+            <li><a href="index.html#hero" class="nav-link">Inicio</a></li>
+            <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
+            <li><a href="index.html#services" class="nav-link">Servicios</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+            <li><a href="catalog.html" class="nav-link active">Catálogo</a></li>
+        </ul>
+        <div class="user-menu">
+            <button class="hamburger-btn">☰</button>
+            <ul class="user-dropdown">
+                <li class="nav-item"><a href="index.html#hero">Inicio</a></li>
+                <li class="nav-item"><a href="index.html#about">Acerca De</a></li>
+                <li class="nav-item"><a href="index.html#services">Servicios</a></li>
+                <li class="nav-item"><a href="index.html#contact">Contacto</a></li>
+                <li class="nav-item"><a href="catalog.html">Catálogo</a></li>
+                <li class="dropdown-separator"></li>
+                <li class="user-item"><a href="auth/login.html">Login</a></li>
+                <li class="user-item"><a href="auth/signup.html">Sign Up</a></li>
+                <li class="user-item"><a href="orders.html">Mis pedidos</a></li>
+                <li class="user-item"><a href="/logout">Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="cart-page">
+        <header class="page-header">
+            <h1>Carrito de Compras</h1>
+        </header>
+        <div class="cart-container">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="cart-item">
+                            <img src="IMG/background.png" alt="Jugo de frutas" />
+                            <div class="cart-item-info">
+                                <h4>Jugo de Frutas</h4>
+                            </div>
+                        </td>
+                        <td>$45 MXN</td>
+                        <td><input type="number" value="1" min="1" /></td>
+                        <td>$45 MXN</td>
+                        <td><button class="btn-small-delete remove-btn">Eliminar</button></td>
+                    </tr>
+                    <!-- Más filas dinámicas -->
+                </tbody>
+            </table>
+            <div class="cart-summary">
+                <p>Total: <span class="total-amount">$45 MXN</span></p>
+                <a href="#" class="btn">Proceder al Pago</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="JS/index.js"></script>
+</body>
+
+</html>

@@ -1,5 +1,7 @@
 :root {
     /* Colores */
+    --red: #ff3333;
+    --red-dark: #b00000;
     --green: #38b000;
     --green-dark: #2f8e00;
     --dark: #333;

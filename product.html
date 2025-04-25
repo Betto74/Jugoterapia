@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalles del Producto - Jugoterapia</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">JUGOTERAPIA</div>
+        <ul class="nav-links">
+            <li><a href="index.html#hero" class="nav-link">Inicio</a></li>
+            <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
+            <li><a href="index.html#services" class="nav-link">Servicios</a></li>
+            <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+            <li><a href="catalog.html" class="nav-link active">Catálogo</a></li>
+        </ul>
+        <div class="user-menu">
+            <button class="hamburger-btn">☰</button>
+            <ul class="user-dropdown">
+                <li class="nav-item"><a href="index.html#hero">Inicio</a></li>
+                <li class="nav-item"><a href="index.html#about">Acerca De</a></li>
+                <li class="nav-item"><a href="index.html#services">Servicios</a></li>
+                <li class="nav-item"><a href="index.html#contact">Contacto</a></li>
+                <li class="nav-item"><a href="catalog.html">Catálogo</a></li>
+                <li class="dropdown-separator"></li>
+                <li class="user-item"><a href="auth/login.html">Login</a></li>
+                <li class="user-item"><a href="auth/signup.html">Sign Up</a></li>
+                <li class="user-item hidden"><a href="orders.html">Mis pedidos</a></li>
+                <li class="user-item hidden"><a href="/logout">Cerrar sesión</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="product-page">
+        <div class="product-container">
+            <div class="product-image">
+                <img src="IMG/background.png" alt="Jugo de frutas" />
+            </div>
+            <div class="product-details">
+                <h1>Jugo de Frutas</h1>
+                <p class="price">$45 MXN</p>
+                <p class="desc">Refrescante mezcla de frutas frescas para tu bienestar.</p>
+                <h3>Ingredientes</h3>
+                <ul class="ingredients">
+                    <li>Fresa</li>
+                    <li>Plátano</li>
+                    <li>Manzana</li>
+                    <li>Naranja</li>
+                </ul>
+                <div class="add-cart">
+                    <label for="quantity">Cantidad:</label>
+                    <input type="number" id="quantity" name="quantity" min="1" value="1" />
+                    <a href="#" class="btn">Agregar</a>
+                </div>
+                <a href="catalog.html" class="back-link">← Volver</a>
+            </div>
+            
+        </div>
+    </main>
+
+    <script src="JS/index.js"></script>
+</body>
+
+</html>
