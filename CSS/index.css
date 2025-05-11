@@ -32,6 +32,9 @@
 @import "components/product.css";
 @import "components/cart.css";
 
+@import "components/add-product.css";
+
+
 
 /* 8. Utilidades (helpers) */
 @import "utilities/utilities.css";

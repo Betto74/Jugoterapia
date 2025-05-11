@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agregar Producto – Jugoterapia</title>
+  <link rel="stylesheet" href="CSS/index.css" />
+</head>
+<body>
+  <!-- NAVBAR (Admin) -->
+  <nav class="navbar">
+    <div class="logo">JUGOTERAPIA (Admin)</div>
+    <ul class="nav-links">
+      <li><a href="admin-orders.html" class="nav-link">Pedidos</a></li>
+      <li><a href="add-product.html" class="nav-link active">Agregar Producto</a></li>
+    </ul>
+    <div class="user-menu">
+      <button class="hamburger-btn">☰</button>
+      <ul class="user-dropdown">
+        <li class="nav-item"><a href="admin-orders.html">Pedidos</a></li>
+        <li class="nav-item"><a href="add-product.html">Agregar Producto</a></li>
+        <li class="dropdown-separator"></li>
+        <li class="user-item"><a href="/logout">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="add-product-page">
+    <div class="add-product-container card">
+      <h1>Agregar Nuevo Producto</h1>
+      <form class="add-product-form" action="/admin/products" method="post" enctype="multipart/form-data">
+        <label for="type">Tipo de Producto</label>
+        <select id="type" name="type" required>
+          <option value="jugo">Jugo</option>
+          <option value="licuado">Licuado</option>
+          <option value="postre">Postre</option>
+        </select>
+
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" placeholder="Nombre del producto" required />
+
+        <label for="image">Imagen</label>
+        <input type="file" id="image" name="image" accept="image/*" required />
+
+        <label for="price">Precio (MXN)</label>
+        <input type="number" id="price" name="price" placeholder="0.00" step="0.01" required />
+
+        <label for="description">Descripción</label>
+        <textarea id="description" name="description" rows="3" placeholder="Descripción breve" required></textarea>
+
+        <label for="ingredients">Ingredientes</label>
+        <textarea id="ingredients" name="ingredients" rows="3" placeholder="Lista de ingredientes separados por comas" required></textarea>
+
+        <label for="stock">Unidades en Inventario</label>
+        <input type="number" id="stock" name="stock" min="0" value="0" required />
+
+        <button type="submit" class="btn">Guardar Producto</button>
+      </form>
+    </div>
+  </main>
+
+  <script src="JS/main.js"></script>
+</body>
+</html>
