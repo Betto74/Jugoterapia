@@ -51,12 +51,39 @@ document.addEventListener("DOMContentLoaded", () => {
     function renderizarProductos(productos) {
         catalogContainer.innerHTML = "";
 
+
+        const esAdmin = isAdmin();
+
+        if (esAdmin) {
+            const filtros = document.querySelector(".catalog-filters");
+        
+            const adminControls = document.createElement("div");
+            adminControls.classList.add("admin-controls");
+        
+            const btnAgregar = document.createElement("button");
+            btnAgregar.textContent = "Agregar Producto";
+            btnAgregar.classList.add("btn", "btn-agregar-admin");
+            btnAgregar.addEventListener("click", () => {
+                window.location.href = "add-product.html";
+            });
+        
+            adminControls.appendChild(btnAgregar);
+        
+            // Evitar duplicados si ya se había renderizado
+            if (!filtros.querySelector(".admin-controls")) {
+                filtros.appendChild(adminControls);
+            }
+        }
+        
+        
+  
+    
         if (productos.length === 0) {
             catalogContainer.innerHTML = "<p>No hay productos disponibles.</p>";
             return;
         }
 
-        const esAdmin = isAdmin();
+        
 
         productos.forEach((producto) => {
             const card = document.createElement("div");

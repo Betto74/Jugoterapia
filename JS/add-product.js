@@ -1,4 +1,14 @@
 document.addEventListener('DOMContentLoaded', async () => {
+
+
+    // 🚨 Verificar si es admin
+    if (!isAuthenticated() || !isAdmin()) {
+        alert("Acceso denegado. Solo los administradores pueden acceder a esta página.");
+        window.location.href = "index.html"; // O redirige a login si prefieres
+        return;
+    }
+    document.body.classList.remove('hidden');
+
     const form = document.querySelector('.add-product-form');
     let titulo= document.getElementById('titulo');
     const urlParams = new URLSearchParams(window.location.search);

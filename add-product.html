@@ -5,8 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Agregar Producto – Jugoterapia</title>
   <link rel="stylesheet" href="CSS/index.css" />
+   
 </head>
-<body>
+<style>
+  body.hidden {
+    display: none;
+  }
+</style> 
+<body class="hidden">
   <!-- NAVBAR (Admin) -->
   <nav class="navbar">
     <div class="logo">JUGOTERAPIA (Admin)</div>
@@ -55,7 +61,9 @@
         <input type="number" id="stock" name="stock" min="0" value="0" required />
 
         <button type="submit" class="btn">Guardar Producto</button>
+        
       </form>
+      <a href="../index.html" class="back-link">← Volver</a>
     </div>
   </main>
 
