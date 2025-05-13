@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const form = e.target;
         const formData = new FormData();
-
+        debugger;
         // Obtener valores del formulario
         formData.append("Nombre", form.name.value);
         formData.append("Descripcion", form.description.value);
         formData.append("Ingredientes", form.ingredients.value);
         formData.append("Precio", parseFloat(form.price.value));
-        formData.append("Stock", parseInt(form.stock.value));
+        formData.append("Unidades", parseInt(form.stock.value));
         formData.append("Tipo", tipoToInt(form.type.value));
         formData.append("Imagen", form.image.files[0]);
         debugger;
