@@ -17,7 +17,7 @@
             <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
             <li><a href="index.html#services" class="nav-link">Servicios</a></li>
             <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
-            <li><a href="catalog.html" class="nav-link active">Catálogo</a></li>
+            <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
         </ul>
         <div class="user-menu">
             <button class="hamburger-btn">☰</button>
@@ -33,11 +33,13 @@
                 <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
                 <li class="user-item" id="signup-item"><a href="auth/signup.html">Sign Up</a></li>
                 <li class="user-item" id="orders-item"><a href="orders/orders.html">Mis pedidos</a></li>
-                <li class="user-item" id="cart-item"><a href="cart.html">Mis pedidos</a></li>
+                <li class="user-item" id="cart-item">
+                    <a href="cart.html">Mi Carrito <span id="cart-count" class="cart-count"></span></a>
+                </li>
 
                 <!-- Separador -->
                 <li class="dropdown-separator" id="logout-separator" style="display: block;"></li>
-                <li class="user-item" id="logout-item"><a href="/logout">Cerrar sesión</a></li>
+                <li class="user-item" id="logout-item"><a href="#" onclick="logout()">Cerrar sesión</a></li>
             </ul>
         </div>
     </nav>
@@ -58,27 +60,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="cart-item">
-                            <img src="IMG/background.png" alt="Jugo de frutas" />
-                            <div class="cart-item-info">
-                                <h4>Jugo de Frutas</h4>
-                            </div>
-                        </td>
-                        <td>$45 MXN</td>
-                        <td><input type="number" value="1" min="1" /></td>
-                        <td>$45 MXN</td>
-                        <td><button class="btn-small-delete remove-btn">Eliminar</button></td>
-                    </tr>
-                    <!-- Más filas dinámicas -->
+                    <!-- Aquí se cargarán dinámicamente los productos -->
                 </tbody>
             </table>
+            <div class="cart-actions">
+                <button id="vaciar-carrito" class="btn-secondary">Vaciar Carrito</button>
+            </div>
             <div class="cart-summary">
-                <p>Total: <span class="total-amount">$45 MXN</span></p>
-                <a href="#" class="btn">Proceder al Pago</a>
+                <p>Total: <span class="total-amount">$0.00 MXN</span></p>
+                <a href="checkout.html" class="btn">Proceder al Pago</a>
             </div>
         </div>
     </main>
+    
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-container">
@@ -95,10 +89,10 @@
             <div class="footer-col">
                 <h4>Enlaces</h4>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Acerca De</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#about">Acerca De</a></li>
+                    <li><a href="index.html#services">Servicios</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
                 </ul>
             </div>
 
@@ -125,8 +119,11 @@
             <p>&copy; 2025 Jugoterapia. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/auth.js"></script>
+    <script src="JS/cart.js"></script>
+    <script src="JS/cart-page.js"></script>
 </body>
-<script src="JS/index.js"></script>
-<script src="JS/auth.js"></script>
 
 </html>

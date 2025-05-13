@@ -1,5 +1,5 @@
 :root {
-    /* Colores */
+    /* Colores existentes */
     --red: #ff3333;
     --red-dark: #b00000;
     --green: #38b000;
@@ -24,4 +24,8 @@
 
     /* Sombras */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    /* Colores de éxito */
+    --success: #28a745;
+    --success-light: #d4edda;
 }

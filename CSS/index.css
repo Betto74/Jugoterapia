@@ -17,6 +17,11 @@
 @import "components/services.css";
 @import "components/contact.css";
 @import "components/footer.css";
+@import "components/catalog.css";
+@import "components/product.css";
+@import "components/cart.css";
+@import "components/checkout.css";
+@import "components/confirmation.css";
 
 
 

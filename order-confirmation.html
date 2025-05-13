@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jugoterapia – Catálogo</title>
-  <!-- Solo CSS global -->
+  <title>Pedido Confirmado – Jugoterapia</title>
   <link rel="stylesheet" href="CSS/index.css" />
 </head>
 
@@ -40,50 +39,37 @@
 
         <!-- User items -->
         <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
-        <li class="user-item" id="signup-item"></li>><a href="auth/signup.html">Sign Up</a></li>
-        <li class="user-item" id="orders-item"><a href="orders.html">Mis pedidos</a></li>
+        <li class="user-item" id="signup-item"><a href="auth/signup.html">Sign Up</a></li>
+        <li class="user-item" id="orders-item"><a href="orders/orders.html">Mis pedidos</a></li>
         <li class="user-item" id="cart-item"><a href="cart.html">Mi Carrito <span id="cart-count" class="cart-count"></span></a></li>
         <!-- Separador -->
-        <li class="dropdown-separator" style="display: block;"></li>
-
+        <li class="dropdown-separator" id="logout-separator" style="display: block;"></li>
         <li class="user-item" id="logout-item"><a href="#" onclick="logout()">Cerrar sesión</a></li>
       </ul>
     </div>
   </nav>
 
-  <!-- BARRA DE BÚSQUEDA -->
-  <header class="catalog-header">
-    <input type="search" class="search-input" placeholder="Buscar jugo, licuado o postre…" />
-  </header>
-
-  <!-- CONTENIDO: FILTROS + PRODUCTOS -->
-  <main class="catalog-content">
-    <!-- FILTROS -->
-    <aside class="catalog-filters">
-      <div class="filter-group">
-        <h3>Tipo</h3>
-        <label><input type="checkbox" name="type" value="jugo" /> Jugo</label>
-        <label><input type="checkbox" name="type" value="licuado" /> Licuado</label>
-        <label><input type="checkbox" name="type" value="postre" /> Postre</label>
-      </div>
-      <div class="filter-group">
-        <h3>Precio</h3>
-        <label><input type="radio" name="price" value="0-50" /> $0-50</label>
-        <label><input type="radio" name="price" value="51-100" /> $51-100</label>
-        <label><input type="radio" name="price" value="101-200" /> $101-200</label>
-        <label><input type="radio" name="price" value="0-100000000" /> Todos</label>
-      </div>
-    </aside>
-
-    <!-- PRODUCTOS -->
-    <section class="catalog-items">
+  <main class="confirmation-page">
+    <div class="confirmation-container">
+      <div class="confirmation-icon">✓</div>
+      <h1>¡Pedido Confirmado!</h1>
+      <p class="confirmation-message">Gracias por tu compra. Hemos recibido tu pedido correctamente.</p>
       
+      <div class="order-details">
+        <h2>Detalles del Pedido</h2>
+        <p><strong>Número de Pedido:</strong> <span id="order-id"></span></p>
+        <p><strong>Fecha:</strong> <span id="order-date"></span></p>
+        <p><strong>Total:</strong> <span id="order-total"></span></p>
+        <p><strong>Tipo de Entrega:</strong> <span id="delivery-type"></span></p>
+      </div>
       
-      <!-- Repetir .item-card por cada producto -->
-    </section>
-
-
+      <div class="confirmation-actions">
+        <a href="orders/orders.html" class="btn">Ver Mis Pedidos</a>
+        <a href="catalog.html" class="btn-secondary">Seguir Comprando</a>
+      </div>
+    </div>
   </main>
+
   <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-container">
@@ -100,10 +86,10 @@
       <div class="footer-col">
         <h4>Enlaces</h4>
         <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Acerca De</a></li>
-          <li><a href="#">Servicios</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#about">Acerca De</a></li>
+          <li><a href="index.html#services">Servicios</a></li>
+          <li><a href="index.html#contact">Contacto</a></li>
         </ul>
       </div>
 
@@ -130,14 +116,11 @@
       <p>&copy; 2025 Jugoterapia. Todos los derechos reservados.</p>
     </div>
   </footer>
+
+  <script src="JS/index.js"></script>
+  <script src="JS/auth.js"></script>
+  <script src="JS/cart.js"></script>
+  <script src="JS/order-confirmation.js"></script>
 </body>
 
-<script src="JS/index.js"></script>
-<script src="JS/auth.js"></script>
-<script src="JS/catalog.js"></script>
-
-
 </html>
-
-<!-- Al final del archivo, antes de cerrar el body -->
-<script src="JS/cart.js"></script>
