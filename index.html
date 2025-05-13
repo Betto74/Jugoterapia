@@ -39,14 +39,15 @@
         <li class="dropdown-separator"></li>
 
         <!-- User items -->
-        <li class="user-item"><a href="auth/login.html">Login</a></li>
-        <li class="user-item"><a href="auth/signup.html">Sign Up</a></li>
-        <li class="user-item"><a href="orders/orders.html">Mis pedidos</a></li>
-        <li class="user-item"><a href="cart.html">Mi Carrito</a></li>
-        <!-- Separador -->
-        <li class="dropdown-separator" style="display: block;"></li>
+        <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
+        <li class="user-item" id="signup-item"><a href="auth/signup.html">Sign Up</a></li>
+        <li class="user-item" id="orders-item"><a href="orders/orders.html">Mis pedidos</a></li>
+        <li class="user-item" id="cart-item"><a href="cart.html">Mi Carrito</a></li>
 
-        <li class="user-item"><a href="/logout">Cerrar sesión</a></li>
+        <!-- Separador -->
+        <li class="dropdown-separator" id="logout-separator" style="display: block;"></li>
+        <li class="user-item" id="logout-item"><a href="#" onclick="logout()">Cerrar sesión</a></li>
+
       </ul>
     </div>
   </nav>
@@ -233,5 +234,6 @@
 </body>
 
 <script src="JS/index.js"></script>
+<script src="JS/auth.js"></script>
 
 </html>

@@ -28,10 +28,15 @@
                 <li class="nav-item"><a href="index.html#contact">Contacto</a></li>
                 <li class="nav-item"><a href="catalog.html">Catálogo</a></li>
                 <li class="dropdown-separator"></li>
-                <li class="user-item"><a href="auth/login.html">Login</a></li>
-                <li class="user-item"><a href="auth/signup.html">Sign Up</a></li>
-                <li class="user-item hidden"><a href="orders.html">Mis pedidos</a></li>
-                <li class="user-item hidden"><a href="/logout">Cerrar sesión</a></li>
+                <!-- User items -->
+
+                <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
+                <li class="user-item" id="signup-item"><a href="auth/signup.html">Sign Up</a></li>
+                <li class="user-item" id="orders-item"><a href="orders.html">Mis pedidos</a></li>
+                <li class="user-item" id="cart-item"><a href="cart.html">Mi Carrito</a></li>
+                <!-- Separador -->
+                <li class="dropdown-separator" id="logout-separator" style="display: block;"></li>
+                <li class="user-item" id="logout-item"><a href="/logout">Cerrar sesión</a></li>
             </ul>
         </div>
     </nav>
@@ -110,5 +115,6 @@
     </footer>
 </body>
 <script src="JS/index.js"></script>
+<script src="JS/auth.js"></script>
 
 </html>

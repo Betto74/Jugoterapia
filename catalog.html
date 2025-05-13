@@ -39,14 +39,14 @@
         <li class="dropdown-separator"></li>
 
         <!-- User items -->
-        <li class="user-item"><a href="auth/login.html">Login</a></li>
-        <li class="user-item"><a href="auth/signup.html">Sign Up</a></li>
-        <li class="user-item"><a href="orders.html">Mis pedidos</a></li>
-        <li class="user-item"><a href="cart.html">Mi Carrito</a></li>
+        <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
+        <li class="user-item" id="signup-item"></li>><a href="auth/signup.html">Sign Up</a></li>
+        <li class="user-item" id="orders-item"><a href="orders.html">Mis pedidos</a></li>
+        <li class="user-item" id="cart-item"><a href="cart.html">Mi Carrito</a></li>
         <!-- Separador -->
         <li class="dropdown-separator" style="display: block;"></li>
 
-        <li class="user-item"><a href="/logout">Cerrar sesión</a></li>
+        <li class="user-item" id="logout-item"><a href="/logout">Cerrar sesión</a></li>
       </ul>
     </div>
   </nav>
@@ -76,79 +76,8 @@
 
     <!-- PRODUCTOS -->
     <section class="catalog-items">
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-      <div class="item-card">
-        <img src="IMG/background.png" alt="Jugo de frutas" />
-        <div class="item-details">
-          <h4>Jugo de frutas</h4>
-          <p class="price">$45 MXN</p>
-          <p class="desc">Delicioso jugo fresco de temporada.</p>
-          <a href="product.html" class="btn">Agregar</a>
-        </div>
-      </div>
-
+      
+      
       <!-- Repetir .item-card por cada producto -->
     </section>
 
@@ -203,5 +132,8 @@
 </body>
 
 <script src="JS/index.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/catalog.js"></script>
+
 
 </html>
