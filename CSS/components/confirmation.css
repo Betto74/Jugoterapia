@@ -1,0 +1,71 @@
+.confirmation-page {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  background-color: var(--gray-100);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirmation-container {
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--light);
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: var(--spacing-xl);
+  text-align: center;
+}
+
+.confirmation-icon {
+  font-size: 4rem;
+  color: var(--success);
+  margin-bottom: var(--spacing-md);
+  height: 100px;
+  width: 100px;
+  line-height: 100px;
+  border-radius: 50%;
+  background-color: var(--success-light);
+  margin: 0 auto var(--spacing-lg);
+}
+
+.confirmation-container h1 {
+  color: var(--dark);
+  margin-bottom: var(--spacing-md);
+}
+
+.confirmation-message {
+  color: var(--text);
+  margin-bottom: var(--spacing-lg);
+  font-size: 1.1rem;
+}
+
+.order-details {
+  text-align: left;
+  background-color: var(--gray-100);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.order-details h2 {
+  margin-top: 0;
+  margin-bottom: var(--spacing-md);
+  font-size: 1.3rem;
+}
+
+.order-details p {
+  margin-bottom: var(--spacing-sm);
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .confirmation-actions {
+    flex-direction: column;
+  }
+}

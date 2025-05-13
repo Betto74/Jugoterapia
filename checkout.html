@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checkout – Jugoterapia</title>
+  <link rel="stylesheet" href="CSS/index.css" />
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">JUGOTERAPIA</div>
+
+    <!-- Menú inline (solo en desktop) -->
+    <ul class="nav-links">
+      <li><a href="index.html#hero" class="nav-link">Inicio</a></li>
+      <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
+      <li><a href="index.html#services" class="nav-link">Servicios</a></li>
+      <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+      <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+    </ul>
+
+    <!-- Botón hamburguesa (siempre visible) -->
+    <div class="user-menu">
+      <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
+      <ul class="user-dropdown">
+        <!-- Nav items (solo en mobile) -->
+        <li class="nav-item"><a href="index.html#hero">Inicio</a></li>
+        <li class="nav-item"><a href="index.html#about">Acerca De</a></li>
+        <li class="nav-item"><a href="index.html#services">Servicios</a></li>
+        <li class="nav-item"><a href="index.html#contact">Contacto</a></li>
+        <li class="nav-item"><a href="catalog.html">Catálogo</a></li>
+
+        <!-- Separador -->
+        <li class="dropdown-separator"></li>
+
+        <!-- User items -->
+        <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
+        <li class="user-item" id="signup-item"><a href="auth/signup.html">Sign Up</a></li>
+        <li class="user-item" id="orders-item"><a href="orders/orders.html">Mis pedidos</a></li>
+        <li class="user-item" id="cart-item"><a href="cart.html">Mi Carrito <span id="cart-count" class="cart-count"></span></a></li>
+        <!-- Separador -->
+        <li class="dropdown-separator" id="logout-separator" style="display: block;"></li>
+        <li class="user-item" id="logout-item"><a href="#" onclick="logout()">Cerrar sesión</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="checkout-page">
+    <header class="page-header">
+      <h1>Finalizar Compra</h1>
+    </header>
+
+    <div class="checkout-container">
+      <!-- Columna izquierda: Formulario de envío -->
+      <div class="checkout-form-container">
+        <h2>Información de Entrega</h2>
+        
+        <form id="checkout-form" class="checkout-form">
+          <!-- Tipo de entrega -->
+          <div class="form-group delivery-type">
+            <h3>Tipo de entrega</h3>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="deliveryType" value="pickup" checked> 
+                Recoger en tienda
+              </label>
+              <label>
+                <input type="radio" name="deliveryType" value="delivery"> 
+                Entrega a domicilio
+              </label>
+            </div>
+          </div>
+
+          <!-- Información personal -->
+          <div class="form-group">
+            <h3>Información personal</h3>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="nombre">Nombre completo*</label>
+                <input type="text" id="nombre" name="nombre" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="telefono">Teléfono*</label>
+                <input type="tel" id="telefono" name="telefono" required>
+              </div>
+              <div class="form-field">
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dirección de entrega (solo visible si es delivery) -->
+          <div class="form-group" id="direccion-group">
+            <h3>Dirección de entrega</h3>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="calle">Calle y número*</label>
+                <input type="text" id="calle" name="calle">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="colonia">Colonia*</label>
+                <input type="text" id="colonia" name="colonia">
+              </div>
+              <div class="form-field">
+                <label for="ciudad">Ciudad*</label>
+                <input type="text" id="ciudad" name="ciudad">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="estado">Estado*</label>
+                <input type="text" id="estado" name="estado">
+              </div>
+              <div class="form-field">
+                <label for="cp">Código Postal*</label>
+                <input type="text" id="cp" name="cp">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-field full-width">
+                <label for="referencias">Referencias adicionales</label>
+                <textarea id="referencias" name="referencias" rows="3" placeholder="Indicaciones adicionales para encontrar tu domicilio"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Comentarios adicionales -->
+          <div class="form-group">
+            <h3>Comentarios adicionales</h3>
+            <div class="form-row">
+              <div class="form-field full-width">
+                <textarea id="comentarios" name="comentarios" rows="3" placeholder="Instrucciones especiales para tu pedido"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón de continuar -->
+          <div class="form-actions">
+            <button type="submit" class="btn">Confirmar Pedido</button>
+            <a href="cart.html" class="btn-secondary">Volver al Carrito</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- Columna derecha: Resumen del pedido -->
+      <div class="order-summary">
+        <h2>Resumen del Pedido</h2>
+        <div class="order-items">
+          <!-- Los items se cargarán dinámicamente -->
+        </div>
+        <div class="order-totals">
+          <div class="subtotal">
+            <span>Subtotal:</span>
+            <span id="subtotal">$0.00 MXN</span>
+          </div>
+          <div class="shipping" id="shipping-cost-container">
+            <span>Envío:</span>
+            <span id="shipping-cost">$0.00 MXN</span>
+          </div>
+          <div class="total">
+            <span>Total:</span>
+            <span id="total">$0.00 MXN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <!-- Sobre nosotros -->
+      <div class="footer-col">
+        <h4>Jugoterapia</h4>
+        <p>
+          Disfruta de jugos, licuados y postres naturales diseñados para tu bienestar. ¡Salud en
+          cada sorbo!
+        </p>
+      </div>
+
+      <!-- Enlaces rápidos -->
+      <div class="footer-col">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html#about">Acerca De</a></li>
+          <li><a href="index.html#services">Servicios</a></li>
+          <li><a href="index.html#contact">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <p>Email: <a href="mailto:jugoterapia@gmail.com">jugoterapia@gmail.com</a></p>
+        <p>Teléfono: <a href="tel:+525551234567">+52 55 5123 4567</a></p>
+        <p>Moroleón, Gto, México</p>
+      </div>
+
+      <!-- Redes sociales -->
+      <div class="footer-col">
+        <h4>Síguenos</h4>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook">👍</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Jugoterapia. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="JS/index.js"></script>
+  <script src="JS/auth.js"></script>
+  <script src="JS/cart.js"></script>
+  <script src="JS/checkout.js"></script>
+</body>
+
+</html>

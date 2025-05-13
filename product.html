@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Detalles del Producto - Jugoterapia</title>
+    <title>Producto – Jugoterapia</title>
     <link rel="stylesheet" href="CSS/index.css" />
 </head>
 
@@ -28,15 +28,17 @@
                 <li class="nav-item"><a href="index.html#contact">Contacto</a></li>
                 <li class="nav-item"><a href="catalog.html">Catálogo</a></li>
                 <li class="dropdown-separator"></li>
-                <!-- User items -->
 
+                <!-- User items -->
                 <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
                 <li class="user-item" id="signup-item"><a href="auth/signup.html">Sign Up</a></li>
-                <li class="user-item" id="orders-item"><a href="orders.html">Mis pedidos</a></li>
-                <li class="user-item" id="cart-item"><a href="cart.html">Mi Carrito</a></li>
+                <li class="user-item" id="orders-item"><a href="orders/orders.html">Mis pedidos</a></li>
+                <li class="user-item" id="cart-item">
+                    <a href="cart.html">Mi Carrito <span id="cart-count" class="cart-count"></span></a>
+                </li>
                 <!-- Separador -->
                 <li class="dropdown-separator" id="logout-separator" style="display: block;"></li>
-                <li class="user-item" id="logout-item"><a href="/logout">Cerrar sesión</a></li>
+                <li class="user-item" id="logout-item"><a href="#" onclick="logout()">Cerrar sesión</a></li>
             </ul>
         </div>
     </nav>
@@ -44,29 +46,25 @@
     <main class="product-page">
         <div class="product-container">
             <div class="product-image">
-                <img src="IMG/background.png" alt="Jugo de frutas" />
+                <img src="IMG/default.png" alt="Producto" />
             </div>
             <div class="product-details">
-                <h1>Jugo de Frutas</h1>
-                <p class="price">$45 MXN</p>
-                <p class="desc">Refrescante mezcla de frutas frescas para tu bienestar.</p>
+                <h1>Cargando producto...</h1>
+                <p class="price">$0.00 MXN</p>
+                <p class="desc">Cargando descripción...</p>
                 <h3>Ingredientes</h3>
                 <ul class="ingredients">
-                    <li>Fresa</li>
-                    <li>Plátano</li>
-                    <li>Manzana</li>
-                    <li>Naranja</li>
+                    <li>Cargando ingredientes...</li>
                 </ul>
                 <div class="add-cart">
                     <label for="quantity">Cantidad:</label>
-                    <input type="number" id="quantity" name="quantity" min="1" value="1" />
-                    <a href="#" class="btn">Agregar</a>
+                    <input type="number" id="quantity" value="1" min="1" />
+                    <button id="add-to-cart" class="btn">Agregar al carrito</button>
                 </div>
-                <a href="catalog.html" class="back-link">← Volver</a>
             </div>
-
         </div>
     </main>
+
     <!-- FOOTER -->
     <footer class="footer">
         <div class="container footer-container">
@@ -83,10 +81,10 @@
             <div class="footer-col">
                 <h4>Enlaces</h4>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Acerca De</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#about">Acerca De</a></li>
+                    <li><a href="index.html#services">Servicios</a></li>
+                    <li><a href="index.html#contact">Contacto</a></li>
                 </ul>
             </div>
 
@@ -113,8 +111,11 @@
             <p>&copy; 2025 Jugoterapia. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script src="JS/index.js"></script>
+    <script src="JS/auth.js"></script>
+    <script src="JS/cart.js"></script>
+    <script src="JS/product.js"></script>
 </body>
-<script src="JS/index.js"></script>
-<script src="JS/auth.js"></script>
 
 </html>
