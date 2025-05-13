@@ -38,7 +38,7 @@ async function cargarDetallesPedido(orderId) {
     document.getElementById('order-id').textContent = pedido.id;
     
     // Formatear fecha
-    const fecha = new Date(pedido.fecha);
+    const fecha = new Date(pedido.fechaOrden);
     document.getElementById('order-date').textContent = fecha.toLocaleDateString('es-MX', {
       year: 'numeric',
       month: 'long',
