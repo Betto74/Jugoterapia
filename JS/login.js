@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('email').value;
         const password = document.getElementById('password').value;
         const errorMessage = document.getElementById('error-message');
-
+        debugger;
         try {
             const response = await fetch('https://localhost:44370/api/Auth/Login', {
 
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('authToken', data.token);
             localStorage.setItem('userId', data.userId);
             localStorage.setItem('userName', data.nombre);
+            localStorage.setItem('userRole', data.tipoUsuario === 0 ?   'Administrador' : 'Cliente'); 
 
             // Redireccionar al usuario
             window.location.href = '../index.html';

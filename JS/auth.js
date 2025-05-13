@@ -17,6 +17,14 @@ function isAuthenticated() {
   return localStorage.getItem('authToken') !== null;
 }
 
+
+/**
+ * Verifica si el usuario actual es administrador
+ * @returns {boolean}
+ */
+function isAdmin() {
+  return localStorage.getItem('userRole') === 'Administrador';
+}
 /**
  * Obtiene el userId del usuario autenticado
  * @returns {number|null} el ID del usuario o null si no está autenticado
@@ -51,6 +59,9 @@ function logout() {
   localStorage.removeItem('authToken');
   localStorage.removeItem('userId');
   localStorage.removeItem('userName');
+  localStorage.removeItem('userRole');
+
+
 
   // Redirigir al inicio o página de login
   window.location.href = 'index.html';

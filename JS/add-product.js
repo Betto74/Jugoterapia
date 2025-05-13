@@ -1,35 +1,57 @@
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('.add-product-form').addEventListener('submit', async (e) => {
+document.addEventListener('DOMContentLoaded', async () => {
+    const form = document.querySelector('.add-product-form');
+    let titulo= document.getElementById('titulo');
+    const urlParams = new URLSearchParams(window.location.search);
+    const productoId = urlParams.get('id');
+    let productoActual = null;
+
+    if (productoId) {
+        // Cargar datos del producto existente
+        try {
+            const response = await fetch(`https://localhost:44370/api/jugos/${productoId}`);
+            if (!response.ok) throw new Error("Producto no encontrado");
+            productoActual = await response.json();
+            llenarFormulario(productoActual);
+        } catch (error) {
+            console.error("Error al cargar producto:", error);
+            alert("No se pudo cargar el producto. Verifica el ID.");
+        }
+    }
+
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
-        const form = e.target;
         const formData = new FormData();
-        debugger;
-        // Obtener valores del formulario
         formData.append("Nombre", form.name.value);
         formData.append("Descripcion", form.description.value);
         formData.append("Ingredientes", form.ingredients.value);
         formData.append("Precio", parseFloat(form.price.value));
         formData.append("Unidades", parseInt(form.stock.value));
         formData.append("Tipo", tipoToInt(form.type.value));
-        formData.append("Imagen", form.image.files[0]);
-        debugger;
 
-        fetch("https://localhost:44370/api/jugos")
-            .then(() => console.log("Servidor listo"))
-            .catch(() => console.warn("Primer conexión fallida, puede ser normal en caliente"));
+        // Solo agregar imagen si se seleccionó una nueva
+        if (form.image.files.length > 0) {
+            formData.append("Imagen", form.image.files[0]);
+        }
+
+        const url = productoId
+            ? `https://localhost:44370/api/jugos/${productoId}`
+            : 'https://localhost:44370/api/jugos';
+
+        const method = productoId ? 'PUT' : 'POST';
 
         try {
-            const response = await fetch('https://localhost:44370/api/jugos', {
-                method: 'POST',
+            const response = await fetch(url, {
+                method,
                 body: formData
             });
 
             const responseText = await response.text();
 
             if (response.ok) {
-                alert("Producto agregado correctamente");
-                form.reset();
+                alert(productoId ? "Producto actualizado correctamente" : "Producto agregado correctamente");
+                if (!productoId) form.reset();
+                if (productoId) window.location.href = "catalog.html";
             } else {
                 console.warn("Respuesta no exitosa:", response.status, responseText);
                 alert("Error al guardar: " + responseText);
@@ -38,8 +60,31 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error("Error real de conexión o red:", error);
             alert("Error al conectar con el servidor: " + error.message);
         }
-
     });
+
+    function llenarFormulario(producto) {
+        form.name.value = producto.nombre || '';
+        form.description.value = producto.descripcion || '';
+        form.ingredients.value = producto.ingredientes || '';
+        form.price.value = producto.precio || '';
+        form.stock.value = producto.unidades || 0;
+        titulo.textContent = "Actualizar producto: " + producto.nombre;
+        // Convertir tipo numérico a valor string del select
+        switch (producto.tipo) {
+            case 0:
+                form.type.value = "jugo";
+                break;
+            case 1:
+                form.type.value = "licuado";
+                break;
+            case 2:
+                form.type.value = "postre";
+                break;
+            default:
+                form.type.value = "jugo"; // Valor por defecto
+                break;
+        }
+    }
 
     function tipoToInt(tipo) {
         switch (tipo.toLowerCase()) {

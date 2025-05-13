@@ -12,44 +12,37 @@
 <body>
   <!-- NAVBAR -->
   <nav class="navbar">
-    <!-- Logo -->
     <div class="logo">JUGOTERAPIA</div>
-
-    <!-- Menú inline (solo en desktop) -->
     <ul class="nav-links">
-      <li><a href="index.html#hero" class="nav-link">Inicio</a></li>
-      <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
-      <li><a href="index.html#services" class="nav-link">Servicios</a></li>
-      <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
-      <li><a href="catalog.html" class="nav-link">Catálogo</a></li>
+        <li><a href="index.html#hero" class="nav-link">Inicio</a></li>
+        <li><a href="index.html#about" class="nav-link">Acerca De</a></li>
+        <li><a href="index.html#services" class="nav-link">Servicios</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contacto</a></li>
+        <li><a href="catalog.html" class="nav-link active">Catálogo</a></li>
     </ul>
-
-    <!-- Botón hamburguesa (siempre visible) -->
     <div class="user-menu">
-      <button class="hamburger-btn" aria-label="Abrir menú">☰</button>
-      <ul class="user-dropdown">
-        <!-- Nav items (solo en mobile) -->
-        <li class="nav-item"><a href="index.html#hero">Inicio</a></li>
-        <li class="nav-item"><a href="index.html#about">Acerca De</a></li>
-        <li class="nav-item"><a href="index.html#services">Servicios</a></li>
-        <li class="nav-item"><a href="index.html#contact">Contacto</a></li>
-        <li class="nav-item"><a href="catalog.html">Catálogo</a></li>
+        <button class="hamburger-btn">☰</button>
+        <ul class="user-dropdown">
+            <li class="nav-item"><a href="index.html#hero">Inicio</a></li>
+            <li class="nav-item"><a href="index.html#about">Acerca De</a></li>
+            <li class="nav-item"><a href="index.html#services">Servicios</a></li>
+            <li class="nav-item"><a href="index.html#contact">Contacto</a></li>
+            <li class="nav-item"><a href="catalog.html">Catálogo</a></li>
+            <li class="dropdown-separator"></li>
 
-        <!-- Separador -->
-        <li class="dropdown-separator"></li>
-
-        <!-- User items -->
-        <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
-        <li class="user-item" id="signup-item"></li>><a href="auth/signup.html">Sign Up</a></li>
-        <li class="user-item" id="orders-item"><a href="orders.html">Mis pedidos</a></li>
-        <li class="user-item" id="cart-item"><a href="cart.html">Mi Carrito <span id="cart-count" class="cart-count"></span></a></li>
-        <!-- Separador -->
-        <li class="dropdown-separator" style="display: block;"></li>
-
-        <li class="user-item" id="logout-item"><a href="#" onclick="logout()">Cerrar sesión</a></li>
-      </ul>
+            <!-- User items -->
+            <li class="user-item" id="login-item"><a href="auth/login.html">Login</a></li>
+            <li class="user-item" id="signup-item"><a href="auth/signup.html">Sign Up</a></li>
+            <li class="user-item" id="orders-item"><a href="orders/orders.html">Mis pedidos</a></li>
+            <li class="user-item" id="cart-item">
+                <a href="cart.html">Mi Carrito <span id="cart-count" class="cart-count"></span></a>
+            </li>
+            <!-- Separador -->
+            <li class="dropdown-separator" id="logout-separator" style="display: block;"></li>
+            <li class="user-item" id="logout-item"><a href="#" onclick="logout()">Cerrar sesión</a></li>
+        </ul>
     </div>
-  </nav>
+</nav>
 
   <!-- BARRA DE BÚSQUEDA -->
   <header class="catalog-header">
