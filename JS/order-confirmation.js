@@ -24,12 +24,12 @@ async function cargarDetallesPedido(orderId) {
     const token = localStorage.getItem('authToken');
     
     // Hacer petición a la API para obtener detalles del pedido
-    const response = await fetch(`https://localhost:44370/api/pedidos/${orderId}`, {
+    const response = await fetch(`https://localhost:44370/api/ordenes/${orderId}`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
     });
-    
+    debugger;
     if (!response.ok) throw new Error('Error al obtener detalles del pedido');
     
     const pedido = await response.json();
